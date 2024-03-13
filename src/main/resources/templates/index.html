@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Baby Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      color: #666;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      margin-right: 10px;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      border-radius: 5px;
+      width: 80%;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Welcome to Baby Manager</h1>
+  <p>Manage your baby's activities and records easily with our system.</p>
+  <button onclick="openModal('loginModal')" class="btn">Login</button>
+  <button onclick="openModal('signupModal')" class="btn">Sign Up</button>
+</div>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal('loginModal')" class="close">&times;</span>
+    <h2>Login</h2>
+    <form>
+      <table>
+        <tr>
+          <td><label for="username">Username:</label></td>
+          <td><input type="text" id="username" name="username"></td>
+        </tr>
+        <tr>
+          <td><label for="password">Password:</label></td>
+          <td><input type="password" id="password" name="password"></td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align:center;">
+            <button type="submit" class="btn">Login</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div id="signupModal" class="modal">
+  <div class="modal-content">
+    <span onclick="closeModal('signupModal')" class="close">&times;</span>
+    <h2>SignUp</h2>
+    <form>
+      <table>
+        <tr>
+          <td><label for="fname">First name:</label></td>
+          <td><input type="text" id="fname" name="fname"></td>
+        </tr>
+        <tr>
+          <td><label for="sname">Surname:</label></td>
+          <td><input type="text" id="sname" name="sname"></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input type="email" id="email" name="email"></td>
+        </tr>
+        <tr>
+          <td><label for="password1">Password:</label></td>
+          <td><input type="password" id="password1" name="password1"></td>
+        </tr>
+        <tr>
+          <td><label for="password2">Confirm password:</label></td>
+          <td><input type="password" id="password2" name="password2"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="checkbox" id="terms" name="terms">
+            <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align:center;">
+            <button type="submit" class="btn">Login</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Function to open modal
+  function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+  }
+
+  // Function to close modal
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+  }
+</script>
+</body>
+</html>
